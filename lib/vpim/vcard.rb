@@ -161,8 +161,7 @@ module Vpim
         params = field.pvalues('TYPE')
 
         if params
-          params.each do |p|
-            p.downcase!
+          params.map(&:downcase).each do |p|
             case p
             when 'home', 'work'
               adr.location << p
@@ -248,8 +247,7 @@ module Vpim
         params = field.pvalues('TYPE')
 
         if params
-          params.each do |p|
-            p.downcase!
+          params.map(&:downcase).each do |p|
             case p
             when 'home', 'work'
               eml.location << p
@@ -337,8 +335,7 @@ module Vpim
         params = field.pvalues('TYPE')
 
         if params
-          params.each do |p|
-            p.downcase!
+          params.map(&:downcase).each do |p|
             case p
             when 'home', 'work', 'cell', 'car', 'pager'
               tel.location << p
